@@ -1,0 +1,716 @@
+:root{
+  --glow-color: #F7A00C;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+/* ----Arka plan resim--------- */
+.container{
+    background-image: url(./Images/ArkaFon.png);
+    background-repeat: no-repeat;
+    /* background-size:cover; */
+    background-position: center;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    display: flex;
+}
+
+.left_box_signin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* border-right: 1px solid #F7A00C; */
+    border-bottom: none;
+}
+.texth1{
+color: white;
+position: absolute;
+top: 3rem;
+left: 7rem;
+font-size: 35px;
+}
+.flex_button_signin{
+display: flex;
+margin-left: 4rem;
+
+}
+.signin-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .signin-inputs label {
+    width: 100%;
+    height: 3.5rem;
+    position: relative;
+  }
+  .signin-inputs label .icon-box {
+    width: 3.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .signin-inputs label .icon-box i {
+    padding: 0.4rem;
+    background-color: #FFCE61;
+    color: #fff;
+    border-radius: 50%;
+  }
+  .signin-inputs label input {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    outline: none;
+    padding: 0.5rem 0.4rem 0.5rem 3.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: inherit;
+    border: 1px solid #FFCE61;
+  }
+  .forget_password{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 0;
+  }
+  .forget_password a{
+    color: #FFCE61;
+    font-size: 17px;
+  }
+  .hoverbtn{
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  color: #fff;
+  border-radius: 0.3rem;
+  border: 0.063rem solid #FFCE61;
+  background: none;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  z-index: 1;
+  }
+  .hoverbtn:hover{
+    color: black;
+    font-weight: bold;
+    font-size: 23px;
+  }
+  .hoverbtn::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 10px;
+  background-color: #F7A00C;
+  z-index: -1;
+  border-radius: 10px;
+  transition: 1.2s ease-in-out;
+  }
+  .hoverbtn:hover::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    background-color: #F7A00C;
+    z-index: -1;
+  }
+  .buttons_bottom_signin{
+    width: 300px;
+    background-color: inherit;
+    /* border: 1px solid #F7A00C; */
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    /* padding: 2rem; */
+    border-radius: 15px;
+    box-shadow: 6px 0 7px #F7A00C;
+
+  }
+  /* --------buttonlarlarim isikli------ */
+  .glowing-btn{
+    position: relative;
+    color: var(--glow-color);
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: 0.15em solid var(--glow-color);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-family: "Raleway", sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+      0px 0px 0.5em 0px var(--glow-color);
+    -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+      0px 0px 0.5em 0px var(--glow-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+      0px 0px 0.5em 0px var(--glow-color);
+    animation: border-flicker 2s linear infinite;
+  }
+  .glowing-txt{
+    float: left;
+    margin-right: -0.8em;
+    -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+                 0 0 0.45em var(--glow-color);
+    -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+              0 0 0.45em var(--glow-color);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+    animation: text-flicker 3s linear infinite;
+  }
+  .faulty-letter{
+    opacity: 0.5;
+    animation: faulty-flicker 2s linear infinite;
+  }
+  .glowing-btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    filter: blur(1em);
+    transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+    background: var(--glow-color);
+    pointer-events: none;
+  }
+  .glowing-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 2em 0.2em var(--glow-color);
+    transition: opacity 100ms linear;
+  }
+  .glowing-btn:hover{
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    animation: none;
+  }
+  .glowing-btn:hover .glowing-txt{
+    animation: none;
+  }
+  .glowing-btn:hover .faulty-letter{
+    animation: none;
+    text-shadow: none;
+    opacity: 1;
+  }
+  .glowing-btn:hover:before{
+    filter: blur(1.5em);
+    opacity: 1;
+  }
+  .glowing-btn:hover:after{
+    opacity: 1;
+  }
+  @keyframes faulty-flicker{
+    0%{
+      opacity: 0.1;
+    }
+    2%{
+      opacity: 0.1;
+    }
+    4%{
+      opacity: 0.5;
+    }
+    19%{
+      opacity: 0.5;
+    }
+    21%{
+      opacity: 0.1;
+    }
+    23%{
+      opacity: 1;
+    }
+    80%{
+      opacity: 0.5;
+    }
+    83%{
+      opacity: 0.4;
+    }
+    87%{
+      opacity: 1;
+    }
+  }
+  @keyframes text-flicker{
+    0%{
+      opacity: 0.1;
+    }
+    2%{
+      opacity: 1;
+    }
+    8%{
+      opacity: 0.1;
+    }
+    9% {
+      opacity: 1;
+    }
+    12% {
+      opacity: 0.1;
+    }
+    20% {
+      opacity: 1;
+    }
+    25%{
+      opacity: 0.3;
+    }
+    30%{
+      opacity: 1;
+    }
+
+    70%{
+      opacity: 0.7;
+    }
+    72%{
+      opacity: 0.2;
+    }
+
+    77%{
+      opacity: 0.9;
+    }
+    100%{
+      opacity: 0.9;
+    }
+  }
+  @keyframes border-flicker{
+    0%{
+      opacity: 0.1;
+    }
+    2%{
+      opacity: 1;
+    }
+    4%{
+      opacity: 0.1;
+    }
+
+    8%{
+      opacity: 1;
+    }
+    70%{
+      opacity: 0.7;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  @media only screen and (max-width: 600px){
+    .glowing-btn{
+      font-size: 1em;
+    }
+  }
+
+
+  /* --------------isikli buttonlarin bitdiyi yer--------- */
+  /* ----------reklam alanin basladiyi alan----- */
+  .reklam_alani{
+    width: inherit;
+    height: 100px;
+    border-radius: 15px;
+    border: 1px solid #F7A00C;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 2px 4px 7px #F7A00C ;
+  }
+  .reklam_alani span{
+color: white;
+font-size: 25px;
+letter-spacing: 0.2rem;
+line-height: 2.5rem;
+text-shadow: 2px 7px 4px #F7A00C;
+  }
+  /* ----------reklam alanin bitdiyi yer----- */
+
+
+/* --------sol giris vee buttonla,reklamin olan kismin sonu----------- */
+
+
+  /* --------caruselin bulundugu alan--------- */
+
+  .carusel_play{
+  perspective: 1000px;
+  margin: 100px auto 0 auto;
+  width: 320px;
+  position: absolute;
+  top: -5rem;
+  left: 63rem;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate360 50s infinite forwards linear;
+}
+.carousel__face {
+  position: absolute;
+  width: 160px;
+  height: 137px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  /* box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5); */
+  display: flex;
+  border: 2px solid #F7A00C;
+  box-shadow: 2px 4px 7px #F7A00C;
+}
+
+span {
+  margin: auto;
+  font-size: 2rem;
+}
+
+
+.carousel__face:nth-child(1) {
+  background-image: url("./Images/animasyon1.jpg");
+  transform: rotateY(  0deg) translateZ(230px); }
+.carousel__face:nth-child(2) {
+  background-image: url("./Images/animasyon6.jpeg");
+    transform: rotateY( 40deg) translateZ(230px);}
+.carousel__face:nth-child(3) {
+  background-image: url("./Images/animasyon2.jpg");
+  transform: rotateY( 80deg) translateZ(230px); }
+.carousel__face:nth-child(4) {
+  background-image: url("./Images/animasyon3.jpeg");
+  transform: rotateY(120deg) translateZ(230px); }
+.carousel__face:nth-child(5) {
+  background-image: url("./Images/animasyon4.jpg");
+ transform: rotateY(160deg) translateZ(230px); }
+.carousel__face:nth-child(6) {
+  background-image: url("./Images/animasyon5.png");
+ transform: rotateY(200deg) translateZ(230px); }
+.carousel__face:nth-child(7) {
+  background-image: url("./Images/animasyon7.jpg");
+ transform: rotateY(240deg) translateZ(230px); }
+.carousel__face:nth-child(8) {
+  background-image: url("./Images/animasyon9.jpg");
+  transform: rotateY(280deg) translateZ(230px); }
+.carousel__face:nth-child(9) {
+  background-image: url("./Images/animasyon8.jpg");
+  transform: rotateY(320deg) translateZ(230px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+  /* -------alt fotovrav olan kisim------ */
+
+  .bottom_jpg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  }
+  /* ---------------alt fotovrav biten kisim-------- */
+
+  .right_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-links-desktop {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    position: absolute;
+    top: 60%;
+    left: 58%;
+  }
+  .mobile-links-desktop a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0.5rem;
+    /* background-color: #000; */
+    color: white;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    transition: 0.3s;
+    /* ------yaptigim deisikler------------------------------------------------------------------------------- */
+    border: 1px solid #F7A00C;
+    background-color: inherit;
+    box-shadow: 4px 2px 2px rgb(237, 162, 48);
+    transition: 2s ease-in-out;
+  }
+  .mobile-links-desktop a:hover {
+    background-color: #F7A00C;
+    box-shadow: none;
+    transform: rotate(360deg);
+  }
+  .mobile-links-desktop a:hover svg path {
+    fill: #000;
+  }
+  .mobile-links-desktop a:hover .mobile-link-text__top,.mobile-links-desktop a:hover .mobile-link-text__bottom {
+    color: #000;
+  }
+  .mobile-links-desktop a svg {
+    pointer-events: none;
+    width: 2rem;
+    height: 2rem;
+  }
+  .mobile-links-desktop a svg path {
+    transition: 0.3s;
+  }
+  .mobile-links-desktop a .mobile-link-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-links-desktop a .mobile-link-text__top {
+    font-family: "Noto Sans", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+  .mobile-links-desktop a .mobile-link-text__bottom {
+    font-family: "Noto Sans", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.8rem;
+    transition: 0.3s;
+    color: rgba(255, 255, 255, 0.58);
+  }
+
+
+  .text_body_message{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    margin-left: 10rem;
+    padding: 3rem;
+
+  }
+  .text_body_message p{
+    color: white;
+    letter-spacing: 2px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    text-shadow: 2px 7px 4px #F7A00C;
+
+  }
+
+  @media only screen and (max-width: 1480px) {
+
+  .buttons_bottom_signin{
+    padding: 10px;
+  }
+  .text_body_message{
+    left: 40%;
+    padding: 0;
+    margin-top: 2rem;
+    
+  }
+  .text_body_message p{
+    font-size: 20px;
+  }
+  .mobile-links-desktop {
+    gap: 1rem;
+    padding: 0 1rem;
+    position: absolute;
+    top: 60%;
+    left: 63%;
+     
+  }
+  .reklam_alani{
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 1380px) {
+
+  .carusel_play{
+    left: 55rem;
+  }
+  .bottom_jpg {
+    bottom: 0;
+    right:-12rem;
+}
+.bottom_jpg img {
+  width: 80%;
+}
+}
+@media only screen and (max-width: 1290px) {
+  .carusel_play{
+    left: 50rem;
+  }
+.flex_button_signin{
+  margin-left: 1rem;
+}
+.texth1{
+  top: 2rem;
+  left: 5rem;
+  font-size: 27px;
+}
+}
+@media only screen and (max-width: 1140px) {
+  .texth1{
+    font-size: 23px;
+    top: 1rem;
+    left: 6rem;
+  }
+  .flex_button_signin{
+    margin-top: 4rem;
+  }
+  .hoverbtn{
+    font-weight: 500;
+    font-size: 1.10rem;
+    height: 3rem;
+    }
+    .signin-inputs label {
+      /* width: 100%; */
+      height: 3rem;
+    }
+  .buttons_bottom_signin{
+    width: auto;
+    height: 450px;
+    padding: 20px;
+  }
+  .glowing-btn{
+    width: 250px;
+    height: 70px;
+  }
+  .glowing-btn:nth-child(1){
+    font-size: 10px;
+  }
+
+  .glowing-txt{
+    font-size: 24px;
+  }
+  .carusel_play{
+    left: 45rem;
+  }
+  .carousel__face:nth-child(1) {
+    transform: rotateY(  0deg) translateZ(130px); }
+  .carousel__face:nth-child(2) {
+      transform: rotateY( 40deg) translateZ(130px);}
+  .carousel__face:nth-child(3) {
+    transform: rotateY( 80deg) translateZ(130px); }
+  .carousel__face:nth-child(4) {
+    transform: rotateY(120deg) translateZ(130px); }
+  .carousel__face:nth-child(5) {
+   transform: rotateY(160deg) translateZ(130px); }
+  .carousel__face:nth-child(6) {
+   transform: rotateY(200deg) translateZ(130px); }
+  .carousel__face:nth-child(7) {
+   transform: rotateY(240deg) translateZ(130px); }
+  .carousel__face:nth-child(8) {
+    transform: rotateY(280deg) translateZ(130px); }
+  .carousel__face:nth-child(9) {
+    transform: rotateY(320deg) translateZ(130px); }
+.carousel__face {
+  width: 100px;
+  height: 90px;
+}
+.text_body_message p{
+  font-size: 20px;
+  margin-left: 3rem;
+
+}
+.text_body_message{
+  top: 25%;
+}
+.bottom_jpg{
+  right:-25rem;
+
+}
+.bottom_jpg img {
+  width: 60%;
+}
+.reklam_alani span{
+  font-size: 20px;
+}
+}
+
+@media only screen and (max-width: 1125px) {
+}
+
+@media only screen and (max-width: 1060px) {
+}
+
+@media only screen and (max-width: 940px) {
+}
+
+@media only screen and (max-width: 830px) {
+}
+
+@media only screen and (max-width: 790px) {
+}
+
+@media only screen and (max-width: 590px) {
+}
+
+@media only screen and (max-width: 400px) {
+}
+
+@media only screen and (max-width: 365px) {
+}
+
+@media only screen and (max-width: 305px) {
+}
+
+@media only screen and (max-width: 290px) {
+}
+
+@media only screen and (max-width: 260px) {
+}
+
+
+
+@media only screen and (max-height: 670px) {
+}
+
+@media only screen and (max-height: 640px) {
+}
+
+@media only screen and (max-height: 610px) {
+}
+
+@media only screen and (max-height: 590px) {
+}
+
+@media only screen and (max-height: 580px) {
+}
+
+@media only screen and (max-height: 520px) {
+}
+
+@media only screen and (max-height: 475px) {
+}
+
+
+
